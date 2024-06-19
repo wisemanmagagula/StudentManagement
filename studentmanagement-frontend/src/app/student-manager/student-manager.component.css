@@ -1,0 +1,15 @@
+.mat-tab-group-wrapper {
+    background-color: #040452; 
+    padding: 16px;
+    height: 100%;
+  }
+  
+  .mat-tab-group .mat-tab-label {
+    color: #333; 
+    font-size: 16px; 
+    font-weight: 500; 
+  }
+  
+  .mat-tab-group .mat-tab-label-active {
+    color: #007bff; 
+  }

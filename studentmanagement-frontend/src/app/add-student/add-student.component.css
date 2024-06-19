@@ -1,0 +1,50 @@
+/* add-student.component.css */
+
+.add-student-container {
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px; 
+    margin: auto; 
+  }
+  
+  .add-student-container h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #333333; /* Adjust heading color */
+  }
+  
+  .add-student-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Adjust vertical spacing between form elements */
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 16px; /* Adjust horizontal spacing between columns */
+  }
+  
+  .column {
+    flex: 1; /* Each column takes equal space */
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Adjust vertical spacing between input fields */
+  }
+  
+  .mat-form-field {
+    width: 100%; /* Ensure form fields take full width */
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px; /* Adjust horizontal spacing between buttons */
+    margin-top: 16px;
+  }
+  
+  button {
+    min-width: 100px; /* Ensure buttons have consistent width */
+  }

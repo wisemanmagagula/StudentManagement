@@ -1,0 +1,61 @@
+<div>
+    <h2>Student List</h2>
+  
+    <table mat-table [dataSource]="students" class="mat-elevation-z8">
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let student"> {{ student.firstName }} {{ student.lastName }} </td>
+      </ng-container>
+  
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let student"> {{ student.emailAddress }} </td>
+      </ng-container>
+  
+      <!-- Student Number Column -->
+      <ng-container matColumnDef="studentNumber">
+        <th mat-header-cell *matHeaderCellDef> Student Number </th>
+        <td mat-cell *matCellDef="let student"> {{ student.studentNumber }} </td>
+      </ng-container>
+  
+      <!-- Date of Birth Column -->
+      <ng-container matColumnDef="dob">
+        <th mat-header-cell *matHeaderCellDef> Date of Birth </th>
+        <td mat-cell *matCellDef="let student"> {{ student.dob }} </td>
+      </ng-container>
+  
+      <!-- Cell Phone Column -->
+      <ng-container matColumnDef="cellPhone">
+        <th mat-header-cell *matHeaderCellDef> Cell Phone </th>
+        <td mat-cell *matCellDef="let student"> {{ student.cellPhone }} </td>
+      </ng-container>
+  
+      <!-- Current Score Column -->
+      <ng-container matColumnDef="currentScore">
+        <th mat-header-cell *matHeaderCellDef> Current Score </th>
+        <td mat-cell *matCellDef="let student"> {{ student.currentScore }} </td>
+      </ng-container>
+  
+      <!-- Average Score Column -->
+      <ng-container matColumnDef="averageScore">
+        <th mat-header-cell *matHeaderCellDef> Average Score </th>
+        <td mat-cell *matCellDef="let student"> {{ student.averageScore }} </td>
+      </ng-container>
+  
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let student">
+          <button mat-button (click)="addScore(student)">Add Score</button>
+          <input type="number" [(ngModel)]="scoreToAdd" placeholder="Enter Score" style="width: 80px;">
+          <button mat-button color="warn" (click)="deleteStudent(student)">Delete</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>

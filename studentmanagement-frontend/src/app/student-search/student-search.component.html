@@ -1,0 +1,27 @@
+<div class="search-container mat-elevation-z2">
+    <h2>Student Search</h2>
+  
+    <form #searchForm="ngForm" (ngSubmit)="searchStudents()" class="search-form">
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="search-by-field">
+          <mat-label>Search By</mat-label>
+          <mat-select name="criteria" [(ngModel)]="searchCriteria" required>
+            <mat-option value="">Select Criteria</mat-option>
+            <mat-option value="FirstName">First Name</mat-option>
+            <mat-option value="LastName">Last Name</mat-option>
+            <mat-option value="EmailAddress">Email Address</mat-option>
+            <mat-option value="StudentNumber">Student Number</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="search-criteria-field">
+          <input matInput type="text" name="searchValue" placeholder="Search Criteria" [(ngModel)]="searchValue" required>
+        </mat-form-field>
+      </div>
+  
+      <div class="button-row">
+        <button mat-raised-button type="submit" color="primary">Search</button>
+        <button mat-raised-button type="button" color="accent" (click)="clearForm()">Clear</button>
+      </div>
+    </form>
+  </div>
