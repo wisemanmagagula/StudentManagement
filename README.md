@@ -1,7 +1,9 @@
 
+---
+
 # Angular 17 Frontend with Java 17 Spring Boot Backend Setup
 
-This repository contains an Angular 17 frontend and a Java 17 Spring Boot backend API.
+This repository contains an Angular 17 frontend, a Java 17 Spring Boot backend API, and PostgreSQL for database management.
 
 ## Prerequisites
 
@@ -19,18 +21,21 @@ Before you begin, ensure you have the following installed:
 - **Docker**: Optional for running the application in containers.
   - Install Docker: [Get Docker](https://docs.docker.com/get-docker/)
 
+- **PostgreSQL**: Database management system.
+  - Install PostgreSQL: [PostgreSQL](https://www.postgresql.org/download/)
+
 ## Project Structure
 
-- `studentmanagement-frontend/`: Angular application
-- `studentmanagement-backend/`: Java API
+- `studentmanagement-frontend/`: Angular 17 frontend application
+- `studentmanagement-backend/`: Java 17 Spring Boot backend API
 
 ## Backend Setup
 
 ### 1. Clone the Repository
 
 ```bash
-git clone [<repository_url>](https://github.com/wisemanmagagula/StudentManagement)
-cd StudentManagement
+git clone <repository_url>
+cd <repository_name>
 ```
 
 ### 2. Build and Run the Java 17 Spring Boot Backend Locally
@@ -77,6 +82,26 @@ npm start
 
 The Angular frontend will start on `http://localhost:4200`.
 
+## PostgreSQL Database Setup
+
+### 1. Install PostgreSQL
+
+Install PostgreSQL on your local machine or use a hosted service.
+
+### 2. Configure Database Connection
+
+Update the backend application configuration (`application.properties` or `application.yml`) to configure the PostgreSQL database connection:
+
+```yaml
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/your_database_name
+    username: your_username
+    password: your_password
+```
+
+Replace `your_database_name`, `your_username`, and `your_password` with your PostgreSQL database details.
+
 ## Docker Setup (Optional)
 
 If you prefer to run the application using Docker containers, follow these steps.
@@ -118,3 +143,5 @@ docker run -d -p 80:80 --name frontend-container frontend-app
 
 - **Customization**: Modify environment variables and configurations as needed.
 - **Troubleshooting**: Refer to Docker logs (`docker logs <container_name>`) for debugging.
+
+---
